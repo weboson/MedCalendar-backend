@@ -33,7 +33,7 @@ export class MealscheduleService {
     return await this.mealscheduleRepository.save(newMealschedule); // сохранить в БД
   }
 
-  //! GetAll
+  //! GetAll - использую, так как данная таблица должна быть одной в БД (@OneByOne: MedCalendar-backend\src\mealschedule\entities\mealschedule.entity.ts)
   async findAll(id: number) { // все графики, которые имеют связь с текущим user (с его id)
     return await this.mealscheduleRepository.find({
       where: {
@@ -45,7 +45,7 @@ export class MealscheduleService {
     })
   }
 
-  //! Get(id)
+  // Get(id) - отказался от использования, т.к. нужно хранить id - при создании графика в LocalStorage, а он хранится только на одной машине
   // exemle: http://localhost:3000/api/mealschedules/mealschedule/80
   async findOne(id: number) {
     const mealscheduleOne = await this.mealscheduleRepository.findOne({    

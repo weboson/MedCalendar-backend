@@ -24,7 +24,7 @@ export class Mealschedule {
     updateDateMeal: Date //  возможность изменить весь рецепт 
 
     //для связи с таблицей user: https://typeorm.io/many-to-one-one-to-many-relations 
-    // Одна таблица графика + один пользователь
+    //! Одна таблица графика + один пользователь
     @OneToOne(() => User, (user) => user.mealschedule)
     // объеденим в одну колонку 'user_id' - хотя зачем? пусть пока будет
     @JoinColumn({ name: 'user_id' }) // колонка "user_id" будет иметь связь с user.id

@@ -16,7 +16,7 @@ export class MealscheduleController {
     return this.mealscheduleService.create(createMealscheduleDto, +req.user.id ); // user.id - нужен для проверки связи с текущим user
   }
 
-  //* будет только ОДИН график у каждого пользователя: комментить не стану
+  //* будет только ОДИН график у каждого пользователя: OneByOne
   @Get()
   @UseGuards(JwtAuthGuard)
   findAll(@Req() req) {
